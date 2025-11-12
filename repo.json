@@ -1,0 +1,325 @@
+{
+    "branches": [
+        {
+            "commits": [
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-16T21:21:49Z",
+                    "hash": "eaae7f438e422e6b33bc82adf69feee677975579",
+                    "message": "minor fix",
+                    "parent": "1c017e4b37107b0804c64782c33aa79075b3811d"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-14T20:10:20Z",
+                    "hash": "1c017e4b37107b0804c64782c33aa79075b3811d",
+                    "message": "fe ai respose pretty print ,1 prompt chat , no chat history or context storing for now",
+                    "parent": "bf693109c2fae3d45f4fd7c9247b1e1707cbbca7"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-13T18:17:25Z",
+                    "hash": "bf693109c2fae3d45f4fd7c9247b1e1707cbbca7",
+                    "message": "front end is fixed",
+                    "parent": "fc6d245bfad491eba9283efee33ca91a8f39957d"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-13T13:43:36Z",
+                    "hash": "fc6d245bfad491eba9283efee33ca91a8f39957d",
+                    "message": "backend gives response now but fe cant fetch",
+                    "parent": "969a8a0c982b2b9107e418a410d69a52023b835c"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-12T21:02:43Z",
+                    "hash": "969a8a0c982b2b9107e418a410d69a52023b835c",
+                    "message": "gemini integration the be shows response in console but the fe can not fetch",
+                    "parent": "e02d064cb69e2f466c6eee02a65f352563aa46c6"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-11T18:37:53Z",
+                    "hash": "e02d064cb69e2f466c6eee02a65f352563aa46c6",
+                    "message": "structured it better and some fe twicks and CLink component and sidebar",
+                    "parent": "22dfb431ba25883d25813ec8974ca608fcf0cb04"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-05T20:10:43Z",
+                    "hash": "22dfb431ba25883d25813ec8974ca608fcf0cb04",
+                    "message": "minor fix",
+                    "parent": "53d4d87ba3f841343ef181913d19c25aa5863bcf"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-05T19:03:01Z",
+                    "hash": "53d4d87ba3f841343ef181913d19c25aa5863bcf",
+                    "message": "frontend all functionalities integrated in database for data persistance",
+                    "parent": "7d61065b1578b225aaf6924ed4ca15041fd34e5d"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-03T19:24:23Z",
+                    "hash": "7d61065b1578b225aaf6924ed4ca15041fd34e5d",
+                    "message": "now it updates the todos collection in db",
+                    "parent": "db17f5c4fd96a9f1a68271f62b1412d85f4f54b5"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-03T18:05:18Z",
+                    "hash": "db17f5c4fd96a9f1a68271f62b1412d85f4f54b5",
+                    "message": "completed auth using custom jwt tokens and stored it in users collection in mongodb",
+                    "parent": "d923550c7f2462f22a37a08496f6c142c8fb310f"
+                }
+            ],
+            "head": "eaae7f438e422e6b33bc82adf69feee677975579",
+            "name": "ai-integration"
+        },
+        {
+            "commits": [
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T00:18:23Z",
+                    "hash": "51606ee9a2bea2cb7b381af5fe6ab08cf94796b2",
+                    "message": "Merge pull request #5 from shaswatHota/fe-and-ui\n\nversion 1.0.0 decent front end and ai chatbot works but without streaming",
+                    "parent": "bbd25c0d0d23199dd233c95b1168959b03063c7a"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T00:15:32Z",
+                    "hash": "bbd25c0d0d23199dd233c95b1168959b03063c7a",
+                    "message": "Merge pull request #4 from shaswatHota/fe-and-ui\n\nFe and UI",
+                    "parent": "e97407d4fb6da6932cd8d0dfd6991eadfb871d12"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T00:12:53Z",
+                    "hash": "c52f26200461690b74e4900233f2abc0354a3dfb",
+                    "message": "version 1.0.0 decent front end and ai chatbot works but without streaming and @goal functionality",
+                    "parent": "5914aeb314f79a30a7234105152ea1a8bbd364c0"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-24T13:35:16Z",
+                    "hash": "5914aeb314f79a30a7234105152ea1a8bbd364c0",
+                    "message": "edit func is done",
+                    "parent": "669016b33c4cccf80e96ffea9a40bd80773906f8"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-23T13:28:46Z",
+                    "hash": "e97407d4fb6da6932cd8d0dfd6991eadfb871d12",
+                    "message": "Merge pull request #3 from shaswatHota/ai-integration\n\nAi integration",
+                    "parent": "e02d064cb69e2f466c6eee02a65f352563aa46c6"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-23T13:20:27Z",
+                    "hash": "669016b33c4cccf80e96ffea9a40bd80773906f8",
+                    "message": "UI and frontend fixes and additions",
+                    "parent": "eaae7f438e422e6b33bc82adf69feee677975579"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-16T21:21:49Z",
+                    "hash": "eaae7f438e422e6b33bc82adf69feee677975579",
+                    "message": "minor fix",
+                    "parent": "1c017e4b37107b0804c64782c33aa79075b3811d"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-14T20:10:20Z",
+                    "hash": "1c017e4b37107b0804c64782c33aa79075b3811d",
+                    "message": "fe ai respose pretty print ,1 prompt chat , no chat history or context storing for now",
+                    "parent": "bf693109c2fae3d45f4fd7c9247b1e1707cbbca7"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-13T18:17:25Z",
+                    "hash": "bf693109c2fae3d45f4fd7c9247b1e1707cbbca7",
+                    "message": "front end is fixed",
+                    "parent": "fc6d245bfad491eba9283efee33ca91a8f39957d"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-13T13:43:36Z",
+                    "hash": "fc6d245bfad491eba9283efee33ca91a8f39957d",
+                    "message": "backend gives response now but fe cant fetch",
+                    "parent": "969a8a0c982b2b9107e418a410d69a52023b835c"
+                }
+            ],
+            "head": "51606ee9a2bea2cb7b381af5fe6ab08cf94796b2",
+            "name": "dev"
+        },
+        {
+            "commits": [
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-07-03T13:44:25Z",
+                    "hash": "aafef8b54acba63e2c82eb22c4111e83570bb4a6",
+                    "message": "changed to gemini-2.0",
+                    "parent": "4a96556d294e595b6b439d3da6cfe30a070cffb4"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T17:47:15Z",
+                    "hash": "4a96556d294e595b6b439d3da6cfe30a070cffb4",
+                    "message": "prompt fix",
+                    "parent": "496819cb4e2a98a0a40f9e8bb43a4836a67d37fb"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T17:43:58Z",
+                    "hash": "496819cb4e2a98a0a40f9e8bb43a4836a67d37fb",
+                    "message": "prompt fix",
+                    "parent": "2e7964c8b7bf0072ba2bf284dfe445464dfafbcf"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:26:11Z",
+                    "hash": "2e7964c8b7bf0072ba2bf284dfe445464dfafbcf",
+                    "message": "prompt fix",
+                    "parent": "63e5292edb21bdd9bdfef614c93d75b8ccdc01eb"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:22:23Z",
+                    "hash": "63e5292edb21bdd9bdfef614c93d75b8ccdc01eb",
+                    "message": "gemini prompt and temp fix",
+                    "parent": "312174f7eca53de6a6ca2f1c2e367291fb1b749f"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:06:48Z",
+                    "hash": "312174f7eca53de6a6ca2f1c2e367291fb1b749f",
+                    "message": "added vercel.json",
+                    "parent": "90c922b3077670d2f66101e5fe8ea818430c9c17"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T18:03:44Z",
+                    "hash": "90c922b3077670d2f66101e5fe8ea818430c9c17",
+                    "message": "fix",
+                    "parent": "1bf849e830b983eb79d25fd311a4ef4d692f7aaf"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T17:58:11Z",
+                    "hash": "1bf849e830b983eb79d25fd311a4ef4d692f7aaf",
+                    "message": "fix",
+                    "parent": "4355ccb52dd42541cd34e1da6948349f1b0780f5"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T17:54:26Z",
+                    "hash": "4355ccb52dd42541cd34e1da6948349f1b0780f5",
+                    "message": "fix",
+                    "parent": "cf205827039f561672bc0fd711f3f0b6733a1246"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T17:45:00Z",
+                    "hash": "cf205827039f561672bc0fd711f3f0b6733a1246",
+                    "message": "username fix",
+                    "parent": "e354f596917542b1a7f30fd22d7605adf27c5084"
+                }
+            ],
+            "head": "aafef8b54acba63e2c82eb22c4111e83570bb4a6",
+            "name": "fe-and-ui"
+        },
+        {
+            "commits": [
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T17:58:46Z",
+                    "hash": "b4c0d26b1fd8968a1eaf346058e02ce79ae77d6b",
+                    "message": "Merge pull request #16 from shaswatHota/fe-and-ui\n\nFe and UI",
+                    "parent": "15306c8ad57cfbd5593fe0a311de0b4aab7a6b7f"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T17:47:15Z",
+                    "hash": "4a96556d294e595b6b439d3da6cfe30a070cffb4",
+                    "message": "prompt fix",
+                    "parent": "496819cb4e2a98a0a40f9e8bb43a4836a67d37fb"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T17:43:58Z",
+                    "hash": "496819cb4e2a98a0a40f9e8bb43a4836a67d37fb",
+                    "message": "prompt fix",
+                    "parent": "2e7964c8b7bf0072ba2bf284dfe445464dfafbcf"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:26:11Z",
+                    "hash": "2e7964c8b7bf0072ba2bf284dfe445464dfafbcf",
+                    "message": "prompt fix",
+                    "parent": "63e5292edb21bdd9bdfef614c93d75b8ccdc01eb"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:22:23Z",
+                    "hash": "63e5292edb21bdd9bdfef614c93d75b8ccdc01eb",
+                    "message": "gemini prompt and temp fix",
+                    "parent": "312174f7eca53de6a6ca2f1c2e367291fb1b749f"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-06-02T16:06:48Z",
+                    "hash": "312174f7eca53de6a6ca2f1c2e367291fb1b749f",
+                    "message": "added vercel.json",
+                    "parent": "90c922b3077670d2f66101e5fe8ea818430c9c17"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T18:11:52Z",
+                    "hash": "15306c8ad57cfbd5593fe0a311de0b4aab7a6b7f",
+                    "message": "Merge pull request #15 from shaswatHota/fe-and-ui\n\nFe and UI",
+                    "parent": "481d16d6fb625de66cbec8ab6beee9fec511ef38"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T18:03:44Z",
+                    "hash": "90c922b3077670d2f66101e5fe8ea818430c9c17",
+                    "message": "fix",
+                    "parent": "1bf849e830b983eb79d25fd311a4ef4d692f7aaf"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T17:58:11Z",
+                    "hash": "1bf849e830b983eb79d25fd311a4ef4d692f7aaf",
+                    "message": "fix",
+                    "parent": "4355ccb52dd42541cd34e1da6948349f1b0780f5"
+                },
+                {
+                    "author": "shaswatHota",
+                    "date": "2025-05-28T17:54:26Z",
+                    "hash": "4355ccb52dd42541cd34e1da6948349f1b0780f5",
+                    "message": "fix",
+                    "parent": "cf205827039f561672bc0fd711f3f0b6733a1246"
+                }
+            ],
+            "head": "b4c0d26b1fd8968a1eaf346058e02ce79ae77d6b",
+            "name": "main"
+        }
+    ],
+    "repository_info": {
+        "default_branch": "main",
+        "forks": 0,
+        "language": "JavaScript",
+        "name": "To-Do-App",
+        "stars": 0,
+        "watchers": 0
+    },
+    "safety_audit": {
+        "risk_score": 5,
+        "status": "🟠 Moderate Risk",
+        "warnings": [
+            "⚠️ .env file detected (server/.env) — may contain secrets.",
+            "⚠️ No .gitignore file found — sensitive files may be committed.",
+            "✅ No suspicious files containing 'key', 'token', or 'secret' in name."
+        ]
+    }
+}
