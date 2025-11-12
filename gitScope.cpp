@@ -144,7 +144,7 @@ public:
     }
 
     void performSafetyCheck() {
-        cout << "\n🔍 Performing safety scan...\n";
+        cout << "\nPerforming safety scan...\n";
         vector<string> warnings;
         int riskScore = 0;
 
@@ -174,7 +174,7 @@ public:
 
             if (path.find(".env") != string::npos) {
                 hasEnv = true;
-                warnings.push_back("⚠️ .env file detected (" + path + ") — may contain secrets.");
+                warnings.push_back(".env file detected (" + path + ") — may contain secrets.");
                 riskScore += 3;
             }
 
@@ -182,29 +182,29 @@ public:
 
             if (regex_search(path, regex("key|secret|token|config", regex::icase))) {
                 hasKeys = true;
-                warnings.push_back("⚠️ Potential sensitive file: " + path);
+                warnings.push_back("Potential sensitive file: " + path);
                 riskScore += 2;
             }
         }
 
         if (!hasGitignore) {
-            warnings.push_back("⚠️ No .gitignore file found — sensitive files may be committed.");
+            warnings.push_back("No .gitignore file found — sensitive files may be committed.");
             riskScore += 2;
         }
 
         if (!hasEnv)
-            warnings.push_back("✅ No .env file found (good security practice).");
+            warnings.push_back("No .env file found (good security practice).");
 
         if (!hasKeys)
-            warnings.push_back("✅ No suspicious files containing 'key', 'token', or 'secret' in name.");
+            warnings.push_back("No suspicious files containing 'key', 'token', or 'secret' in name.");
 
         string status;
         if (riskScore <= 3)
-            status = "🟢 Safe";
+            status = "Safe";
         else if (riskScore <= 6)
-            status = "🟠 Moderate Risk";
+            status = "Moderate Risk";
         else
-            status = "🔴 High Risk";
+            status = "High Risk";
 
         safetyReport = {
             {"warnings", warnings},
@@ -212,10 +212,10 @@ public:
             {"status", status}
         };
 
-        cout << "\n=== 🔒 Safety Report for " << repo << " ===\n";
+        cout << "\n=== Safety Report for " << repo << " ===\n";
         for (auto& w : warnings)
             cout << " - " << w << endl;
-        cout << "\n🔢 Risk Score: " << riskScore << " / 10\n"
+        cout << "\nRisk Score: " << riskScore << " / 10\n"
              << "Status: " << status << endl;
     }
 
@@ -228,7 +228,7 @@ public:
 
         ofstream out("repo.json");
         out << setw(4) << output;
-        cout << "\n✅ Exported repository data + safety report to repo.json\n";
+        cout << "\n Exported repository data + safety report to repo.json\n";
     }
 };
 
@@ -239,20 +239,20 @@ int main() {
 
     try {
         RepoScanner scanner(url);
-        cout << "\n📦 Fetching repository info...\n";
+        cout << "\n Fetching repository info...\n";
         scanner.fetchRepoInfo();
 
-        cout << "🌿 Fetching branches...\n";
+        cout << " Fetching branches...\n";
         scanner.fetchBranches();
 
-        cout << "🧩 Fetching commits...\n";
+        cout << " Fetching commits...\n";
         scanner.fetchCommits(10);
 
         scanner.performSafetyCheck();
 
         scanner.exportToJson();
     } catch (exception& e) {
-        cerr << "❌ Error: " << e.what() << endl;
+        cerr << " Error: " << e.what() << endl;
     }
 
     return 0;

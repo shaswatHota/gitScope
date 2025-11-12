@@ -315,11 +315,11 @@
     },
     "safety_audit": {
         "risk_score": 5,
-        "status": "🟠 Moderate Risk",
+        "status": "Moderate Risk",
         "warnings": [
-            "⚠️ .env file detected (server/.env) — may contain secrets.",
-            "⚠️ No .gitignore file found — sensitive files may be committed.",
-            "✅ No suspicious files containing 'key', 'token', or 'secret' in name."
+            ".env file detected (server/.env) — may contain secrets.",
+            "No .gitignore file found — sensitive files may be committed.",
+            "No suspicious files containing 'key', 'token', or 'secret' in name."
         ]
     }
 }
