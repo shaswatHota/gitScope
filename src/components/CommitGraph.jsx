@@ -204,10 +204,10 @@ const CommitGraph = ({ branches }) => {
     <div
       ref={containerRef}
       style={{
-        height: "700px",
+        height: "575px",
         border: "1px solid #444",
         borderRadius: "8px",
-        backgroundColor: "#0f172a",
+        backgroundColor: "#010409",
         touchAction: "none",
       }}
     />

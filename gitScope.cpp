@@ -6,6 +6,8 @@
 #include <curl/curl.h>
 #include "json.hpp"
 #include <iomanip>
+#include <unordered_set>
+#include <unordered_map>
 
 using namespace std;
 using json = nlohmann::json;
@@ -164,12 +166,18 @@ public:
         }
 
         bool hasEnv = false, hasGitignore = false, hasKeys = false;
+        unordered_set<string> rootFolders;
+        unordered_map<string, bool> folderHasGitignore;
+        unordered_map<string, bool> folderHasDeps;
+        const regex skipConfig("(eslint\\.config|vite\\.config)", regex::icase);
+        const regex sensitivePattern("key|secret|token|config", regex::icase);
+        const regex dependencyPattern("(node_modules|vendor|deps|packages)", regex::icase);
 
         for (auto& f : data["tree"]) {
             if (!f.is_object() || !f.contains("path")) continue;
             string path = f["path"].get<string>();
 
-            if (regex_search(path, regex("(eslint\\.config|vite\\.config)", regex::icase)))
+            if (regex_search(path, skipConfig))
                 continue;
 
             if (path.find(".env") != string::npos) {
@@ -180,10 +188,28 @@ public:
 
             if (path == ".gitignore") hasGitignore = true;
 
-            if (regex_search(path, regex("key|secret|token|config", regex::icase))) {
+            if (regex_search(path, sensitivePattern)) {
                 hasKeys = true;
                 warnings.push_back("Potential sensitive file: " + path);
                 riskScore += 2;
+            }
+
+            size_t slashPos = path.find('/');
+            string type = f.value("type", "");
+            if (slashPos == string::npos) {
+                if (type == "tree") {
+                    rootFolders.insert(path);
+                    if (regex_search(path, dependencyPattern))
+                        folderHasDeps[path] = true;
+                }
+            } else {
+                string rootFolder = path.substr(0, slashPos);
+                rootFolders.insert(rootFolder);
+                string relativePath = path.substr(slashPos + 1);
+                if (relativePath.find(".gitignore") != string::npos)
+                    folderHasGitignore[rootFolder] = true;
+                if (regex_search(relativePath, dependencyPattern))
+                    folderHasDeps[rootFolder] = true;
             }
         }
 
@@ -197,6 +223,19 @@ public:
 
         if (!hasKeys)
             warnings.push_back("No suspicious files containing 'key', 'token', or 'secret' in name.");
+
+        if (!rootFolders.empty()) {
+            for (const auto& folder : rootFolders) {
+                if (!folderHasGitignore.count(folder)) {
+                    warnings.push_back("Folder '" + folder + "' does not contain its own .gitignore file.");
+                    riskScore += 1;
+                }
+                if (folderHasDeps.count(folder)) {
+                    warnings.push_back("Folder '" + folder + "' includes a dependency directory (e.g., node_modules/vendor).");
+                    riskScore += 2;
+                }
+            }
+        }
 
         string status;
         if (riskScore <= 3)
