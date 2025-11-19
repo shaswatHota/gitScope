@@ -53,7 +53,7 @@ export default function SafetyStandards() {
     { message: `Risk Score: ${riskScore}`, type: "info" },
     {
       message: hasSensitiveConfig
-        ? "Config Files Flagged: Yes , need to review."
+        ? "Config Files Flagged: Yes ,Review ASAP."
         : "Config Files Flagged: No",
       type: hasSensitiveConfig ? "warning" : "success",
     },
