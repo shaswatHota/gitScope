@@ -4,7 +4,7 @@
 
 Repository Analysis & Visualization
 
-<!-- Overview image placeholder -->
+
 ![Overview Screenshot](docs/overview.png)
 
 </div>
@@ -24,23 +24,17 @@ GitScope is a two-part local tool:
    - A **Commit Graph** panel (see sample below) that visualizes branches, merges, and commit ordering.
    - A **Safety Standards Report** (sample below) that mirrors the scanner’s fields with glowing status rows.
 
-<!-- Graph image placeholder -->
+
 ![Commit Graph Screenshot](docs/commit-graph.png)
 
-<!-- Safety audit image placeholder -->
+
 ![Safety Audit Screenshot](docs/safety-audit.png)
 
 ## Getting Started
 
 This is a local-only workflow: the frontend simply fetches `repo.json` from the project root, so there is no backend server.
 
-### 1. Compile the scanner
-
-You’ll need g++ with libcurl and OpenSSL development headers.
-
-```bash
-g++ gitScope.cpp -o gitscope -lcurl -lssl -lcrypto
-```
+### 1. Installing dependencies
 
 - Install libcurl headers (example for Debian/Ubuntu):
 
@@ -54,6 +48,20 @@ sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
 curl -L https://github.com/nlohmann/json/releases/latest/download/json.hpp -o json.hpp
 ```
 
+- Install frontend dependencies:
+
+```bash
+npm install
+```
+
+### 2. Compile the scanner
+
+You’ll need g++ with libcurl and OpenSSL development headers.
+
+```bash
+g++ gitScope.cpp -o gitscope -lcurl -lssl -lcrypto
+```
+
 - The repository already includes a prebuilt `gitscope` executable, but **recompile with the command above whenever you change `gitScope.cpp`.**
 - Run the scanner and follow the prompt for a GitHub repository URL:
 
@@ -63,10 +71,9 @@ curl -L https://github.com/nlohmann/json/releases/latest/download/json.hpp -o js
 
 This produces `repo.json` in the project root.
 
-### 2. Install and run the frontend
+### 3. Run the frontend
 
 ```bash
-npm install
 npm run dev
 ```
 
