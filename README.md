@@ -34,7 +34,7 @@ GitScope is a two-part local tool:
 
 This is a local-only workflow: the frontend simply fetches `repo.json` from the project root, so there is no backend server.
 
-### 1. Compile (or recompile) the scanner
+### 1. Compile the scanner
 
 You’ll need g++ with libcurl and OpenSSL development headers.
 
