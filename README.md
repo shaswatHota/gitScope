@@ -42,6 +42,18 @@ You’ll need g++ with libcurl and OpenSSL development headers.
 g++ gitScope.cpp -o gitscope -lcurl -lssl -lcrypto
 ```
 
+- Install libcurl headers (example for Debian/Ubuntu):
+
+```bash
+sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
+```
+
+- If you don’t already have the single-header JSON dependency, pull it directly:
+
+```bash
+curl -L https://github.com/nlohmann/json/releases/latest/download/json.hpp -o json.hpp
+```
+
 - The repository already includes a prebuilt `gitscope` executable, but **recompile with the command above whenever you change `gitScope.cpp`.**
 - Run the scanner and follow the prompt for a GitHub repository URL:
 
