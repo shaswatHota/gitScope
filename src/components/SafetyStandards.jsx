@@ -28,23 +28,35 @@ export default function SafetyStandards() {
 
   const safety = repoData.safety_audit || {};
   const warnings = safety.warnings || [];
+  const normalizedWarnings = warnings.map((msg) => msg.toLowerCase());
 
   const classification = safety.status || "Unknown";
   const riskScore = safety.risk_score ?? "N/A";
 
-  const hasEnv = warnings.some((msg) => msg.toLowerCase().includes(".env"));
-  const hasGitignore = !warnings.some((msg) => msg.toLowerCase().includes("no .gitignore"));
-  const apiExposed = warnings.some(
+  const negativeEnvIndicators = ["no .env", "missing .env", "absent .env"];
+  const hasEnv = normalizedWarnings.some(
+    (msg) => msg.includes(".env") && !negativeEnvIndicators.some((indicator) => msg.includes(indicator))
+  );
+  const hasGitignore = !normalizedWarnings.some((msg) => msg.includes("no .gitignore"));
+  const apiExposed = normalizedWarnings.some(
+    (msg) => msg.includes("api") || msg.includes("key") || msg.includes("token") || msg.includes("secret")
+  );
+
+  const safeConfigKeywords = ["vite", "tailwind"];
+  const hasSensitiveConfig = normalizedWarnings.some(
     (msg) =>
-      msg.toLowerCase().includes("api") ||
-      msg.toLowerCase().includes("key") ||
-      msg.toLowerCase().includes("token") ||
-      msg.toLowerCase().includes("secret")
+      msg.includes("config") && !safeConfigKeywords.some((keyword) => msg.includes(keyword))
   );
 
   const safetyItems = [
     { message: `Classification: ${classification}`, type: "info" },
     { message: `Risk Score: ${riskScore}`, type: "info" },
+    {
+      message: hasSensitiveConfig
+        ? "Config Files Flagged: Yes , need to review."
+        : "Config Files Flagged: No",
+      type: hasSensitiveConfig ? "warning" : "success",
+    },
     {
       message: `Has .env file: ${hasEnv ? "❌ Yes (Exposed)" : "✅ No"}`,
       type: hasEnv ? "warning" : "success",
